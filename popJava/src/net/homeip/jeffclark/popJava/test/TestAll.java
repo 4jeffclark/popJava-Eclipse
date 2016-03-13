@@ -24,7 +24,7 @@ public class TestAll {
         String csv = "duh";
 
 
-        file.openCSV("\\data\\data.txt");
+        file.openAsText("\\data\\testCSV.csv");
 	    System.out.print(file.getFilename()+" ");
 	    System.out.println(file.getStatus());
 
@@ -33,6 +33,8 @@ public class TestAll {
 	    	int i = Integer.parseInt(csv);
 	    	System.out.println(i);
 	    }
+	    
+	    /*
 	    System.out.print(file.getFilename()+" ");
 	    System.out.println(file.getStatus());/////////////////////////////////////////
 	    popFile file2 = new popFile();
@@ -54,7 +56,7 @@ public class TestAll {
         
 	    System.out.print(file2.getFilename()+" ");
 	    System.out.println(file2.getStatus());
-
+*/
 
         }
 

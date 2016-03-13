@@ -25,13 +25,14 @@ public class popFile {
 	}
 
 	
-	public void openCSV(String relPath) throws FileNotFoundException {
+	public void openAsText(String relPath) throws FileNotFoundException {
 	    
         filename=System.getProperty("user.dir")+relPath;
         this.file = new File(filename);
         //Creating Scanner instnace to read File in Java
-        String delimiter =",|"+System.getProperty("line.separator");
-        this.scnr = new Scanner(file).useDelimiter(delimiter);
+        //String delimiter =",|"+System.getProperty("line.separator");
+        //this.scnr = new Scanner(file).useDelimiter(delimiter);
+        this.scnr = new Scanner(file);;
        
 	}
 	
@@ -56,7 +57,9 @@ public class popFile {
 	}
 	
 	public String getCSV()  {
-	
+
+        String delimiter =",|"+System.getProperty("line.separator");
+        this.scnr.useDelimiter(delimiter);
 
         if (this.scnr.hasNext()){
             return (scnr.next());
