@@ -8,32 +8,34 @@ import net.homeip.jeffclark.popJava.fileio.popFile;
 public class TestAll {
 
 	public static void main(String[] args) throws FileNotFoundException {
+  
+	    // popConsole Test //////////////////////////////////////////////	    
+			popConsole console = new popConsole();	    
+			console.getKeyStroke("Console Tests..........................\nPress return to continue");
+			
+			String userinput = null;
 
-		//popConsole Test	    
-	    String userinput = null;
-	    popConsole console = new popConsole();	    
-	    
 	    userinput = console.prompt("Please tell me something: ");
 	    System.out.println("You entered : " + userinput);
-	    
-        
-	    
-	    //File Test
-        popFile file = new popFile();
-        String line = "duh";
-        String csv = "duh";
+			console.prompt("Press any key to continue...");
+			/////////////////////////////////////////////////////////////////
+		
+	    // File Tests ///////////////////////////////////////////////////
+			console.getKeyStroke("File Tests..............................\nPress return to continue");
 
+      popFile file = new popFile(System.getProperty("user.dir") + "/data/testCSV.csv");
+     	
+			Integer csv = -1;
+	    System.out.print(file.getFilename() + " " + file.getStatus() + System.lineSeparator());
 
-        file.openAsText("\\data\\testCSV.csv");
-	    System.out.print(file.getFilename()+" ");
-	    System.out.println(file.getStatus());
-
-	    while ((csv=file.getCSV()) !="EOF"){
-	    	System.out.print(csv+" ");
-	    	int i = Integer.parseInt(csv);
-	    	System.out.println(i);
+	    while (file.getStatus()=="OPEN"){
+	    		csv=file.getCSVInt();
+					if (csv!=null) System.out.print(csv + " ");
 	    }
-	    
+	    System.out.println("EOF");
+	    System.out.print(file.getFilename() + " " + file.getStatus() + System.lineSeparator());
+			/////////////////////////////////////////////////////////////////
+
 	    /*
 	    System.out.print(file.getFilename()+" ");
 	    System.out.println(file.getStatus());/////////////////////////////////////////

@@ -19,7 +19,19 @@ public class popConsole {
 	    
 	}
 	
-	public static String prompt(String prompttext) {
+	public void getKeyStroke(String prompttext) {
+
+	    int input;
+	    
+	    
+	    System.out.print(prompttext);
+	    try {
+	        input = reader.read();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+		public static String prompt(String prompttext) {
 
 	    String input = null;
 	    
