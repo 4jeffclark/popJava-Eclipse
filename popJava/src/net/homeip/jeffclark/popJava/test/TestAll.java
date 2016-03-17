@@ -35,7 +35,18 @@ public class TestAll {
 	    System.out.println("EOF");
 	    System.out.print(file.getFilename() + " " + file.getStatus() + System.lineSeparator());
 			/////////////////////////////////////////////////////////////////
+			popFile testToken = new popFile(System.getProperty("user.dir") + "/data/testToken.txt");
+     	
+			String tok;
+	    System.out.print(file.getFilename() + " " + testToken.getStatus() + System.lineSeparator());
 
+	    while (testToken.getStatus()=="OPEN"){
+	    		tok=testToken.getToken();
+					if (tok!="") System.out.print(tok + " ");
+	    }
+	    System.out.println("EOF");
+	    System.out.print(testToken.getFilename() + " " + file.getStatus() + System.lineSeparator());
+			/////////////////////////////////////////////////////////////////
 	    /*
 	    System.out.print(file.getFilename()+" ");
 	    System.out.println(file.getStatus());/////////////////////////////////////////

@@ -82,7 +82,7 @@ public class popFile extends File {
 	
 		public Integer getCSVInt()  {
 
-			 Pattern delimiter = Pattern.compile("\\s*,\\s*|"+System.lineSeparator()+"++");
+			 Pattern delimiter = Pattern.compile("(\\s*,\\s*)|"+System.lineSeparator()+"++");
 			 //Pattern delimiter = Pattern.compile("\\s*,\\s*|\\s*"+System.lineSeparator()+"*\\s");
        // Pattern delimiter = Pattern.compile(",\\s*|\\s*"+System.lineSeparator());
         this.scnr.useDelimiter(delimiter);
@@ -103,7 +103,7 @@ public class popFile extends File {
       		return (scnr.next());
       } else {
         	this.scnr.close();
-        	this.status="CLOSED";
+        	this.status="EOF";
         	return ("");
       }
 
