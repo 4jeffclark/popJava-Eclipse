@@ -51,11 +51,8 @@ public class popFile extends File {
 	}
 	*/
 	public String getFilename() {
-	    
-        
+	      
             return(filename);
-       
-       
 	}
 	
 	public String getStatus() {
@@ -85,7 +82,8 @@ public class popFile extends File {
 	
 		public Integer getCSVInt()  {
 
-       Pattern delimiter = Pattern.compile("\\s*,\\s*|\\s*"+System.lineSeparator()+"*\\s");
+			 Pattern delimiter = Pattern.compile("\\s*,\\s*|"+System.lineSeparator()+"++");
+			 //Pattern delimiter = Pattern.compile("\\s*,\\s*|\\s*"+System.lineSeparator()+"*\\s");
        // Pattern delimiter = Pattern.compile(",\\s*|\\s*"+System.lineSeparator());
         this.scnr.useDelimiter(delimiter);
 
