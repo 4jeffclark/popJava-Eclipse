@@ -38,18 +38,7 @@ public class popFile extends File {
 
 	}
 
-	/*
-	public void openAsText(String relPath) throws FileNotFoundException {
-	    
-        filename=System.getProperty("user.dir")+relPath;
-        this.file = new File(filename);
-        //Creating Scanner instnace to read File in Java
-        //String delimiter =",|"+System.getProperty("line.separator");
-        //this.scnr = new Scanner(file).useDelimiter(delimiter);
-        this.scnr = new Scanner(file);;
-       
-	}
-	*/
+
 	public String getFilename() {
 	      
             return(filename);
@@ -66,7 +55,7 @@ public class popFile extends File {
        
 	public String getCSV()  {
 
-       String delimiter =", *|"+System.lineSeparator();
+       String delimiter =", *|"+System.lineSeparator()+ "++";
         this.scnr.useDelimiter(delimiter);
 
         if (this.scnr.hasNext()){
@@ -80,11 +69,11 @@ public class popFile extends File {
 	}
 	
 	
-		public Integer getCSVInt()  {
+	public Integer getCSVInt()  {
 
-			 Pattern delimiter = Pattern.compile("(\\s*,\\s*)|"+System.lineSeparator()+"++");
-			 //Pattern delimiter = Pattern.compile("\\s*,\\s*|\\s*"+System.lineSeparator()+"*\\s");
-       // Pattern delimiter = Pattern.compile(",\\s*|\\s*"+System.lineSeparator());
+		Pattern delimiter = Pattern.compile("(\\s*,\\s*)|"+System.lineSeparator()+"++");
+		//Pattern delimiter = Pattern.compile("\\s*,\\s*|\\s*"+System.lineSeparator()+"*\\s");
+		// Pattern delimiter = Pattern.compile(",\\s*|\\s*"+System.lineSeparator());
         this.scnr.useDelimiter(delimiter);
 
         if (this.scnr.hasNextInt()){
@@ -96,7 +85,7 @@ public class popFile extends File {
         }
 	}
 	
-		public String getToken()  {
+	public String getToken()  {
 
 
       if (this.scnr.hasNext()){
@@ -108,7 +97,7 @@ public class popFile extends File {
       }
 
 	}
-		public void reset()  {
+	public void reset()  {
 			this.scnr.reset();
 			this.status="RESET";
 		}

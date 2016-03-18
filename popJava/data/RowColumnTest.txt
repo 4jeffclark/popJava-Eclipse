@@ -1,4 +1,0 @@
-Letters	Numbers
-A		1
-B		2
-Z		1024
