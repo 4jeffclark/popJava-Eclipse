@@ -21,9 +21,9 @@ public class popFile extends File {
 	
 	public popFile(String pathname) throws FileNotFoundException {
 	    
-		    super(pathname);
-    		//this.file = new File(pathname);
-				this.filename=pathname;
+		super(pathname);
+		//this.file = new File(pathname);
+		this.filename=pathname;
         //this.file = new File(filename);
         //Creating Scanner instnace to read File in Java
         //String delimiter =",|"+System.getProperty("line.separator");
