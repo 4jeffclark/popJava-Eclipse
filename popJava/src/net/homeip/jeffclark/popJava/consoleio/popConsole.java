@@ -15,7 +15,7 @@ public class popConsole {
 	//Constructors
 	public popConsole() {
 	    
-   	    System.out.println("popConsole Initialized");
+   	    //System.out.println("popConsole Initialized");
 	    
 	}
 	
